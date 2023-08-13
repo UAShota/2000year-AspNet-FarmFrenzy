@@ -1,0 +1,214 @@
+﻿/*  --------------FIXED-------------- */
+.fixedDiv
+{
+    width: 90%;
+    overflow: auto;
+    height: 100%;
+}
+.fixedRow
+{
+    position: relative;
+    top: expression(this.parentElement.parentElement.parentElement.scrollTop - 2);
+}
+.fixedTable
+{
+    width: 100%;
+    overflow: auto;
+    height: 100%;
+}
+
+/*  --------------STANDART-------------- */
+body
+{
+    background-image: url('background.gif');
+    overflow: hidden;
+    margin: 0px;
+    background-color: #663300;
+}
+.bg_dialog
+{
+    background-image: url('bg_dialog.gif');
+    background-repeat: no-repeat;
+    width: 300px;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: medium;
+    height: 393px;
+}
+.bg_panel
+{
+    background-image: url('bg_panel.gif');
+    background-repeat: repeat;
+    padding-top: 5px;
+    padding-bottom: 2px;
+    height: 0px;
+}
+.bg_panelsub
+{
+    background-image: url('bg_panel_sub.gif');
+    background-repeat: no-repeat;
+    height: 101px;
+    width: 821px;
+    padding-top: 12px;
+}
+.bg_cell
+{
+    padding: 1px 5px 1px 5px;
+    color: #FFFFFF;
+    background-repeat: repeat-x;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    background-color: #6C4D28;
+    font-weight: normal;
+}
+.bg_cellsel
+{
+    border: 1px outset #FFFFFF;
+    padding: 1px 5px 1px 5px;
+    color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    background-color: #AA7A40;
+    font-weight: normal;
+    cursor: hand;
+}
+.bg_cellnosel
+{
+    padding: 1px 5px 1px 5px;
+    color: #FFFFFF;
+    background-repeat: repeat-x;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    background-color: #6C4D28;
+    font-weight: normal;
+    cursor: hand;
+}
+.bg_header
+{
+    color: #FFFFFF;
+    background-repeat: repeat-x;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: #D3A87C;
+    text-align: center;
+    background-color: #783C00;
+    font-weight: bold;
+    cursor: hand;
+    padding: 2px;
+}
+.bg_cell
+{
+    padding: 1px 5px 1px 5px;
+    color: #FFFFFF;
+    background-repeat: repeat-x;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    background-color: #6C4D28;
+    font-weight: normal;
+}
+.td_left
+{
+    padding-left: 25px;
+    height: 40px;
+}
+.td_right
+{
+    padding-right: 25px;
+    height: 20px;
+}
+.td_header
+{
+    height: 45px;
+}
+.imageLoader
+{
+    display: none;
+}
+.comboBox
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    font-weight: bold;
+    background-color: #EDD5A7;
+}
+.bg_button
+{
+    background-image: url('bg_button.gif');
+    background-repeat: no-repeat;
+    height: 35px;
+    width: 100px;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: Tahoma;
+    margin-top: 8px;
+    font-size: x-small;
+    font-weight: bold;
+    margin-right: 3px;
+    margin-left: 3px;
+    background-color: #F8D8A3;
+    cursor: hand;
+}
+.bg_button_sel
+{
+    background-image: url('bg_button_sel.gif');
+    background-repeat: no-repeat;
+    height: 35px;
+    width: 100px;
+    text-align: center;
+    color: #6F2400;
+    font-family: Tahoma;
+    margin-top: 8px;
+    font-size: x-small;
+    font-weight: bold;
+    margin-right: 3px;
+    margin-left: 3px;
+    background-color: #F8D8A3;
+    cursor: hand;
+}
+.bg_edit
+{
+    background-image: url('bg_edit.gif');
+    background-repeat: no-repeat;
+    font-family: "Comic Sans MS";
+    font-size: medium;
+    font-weight: bold;
+    border-style: none;
+    text-align: center;
+    width: 100px;
+    height: 36px;
+    border-width: 0px;
+    padding-top: 5px;
+    background-color: #E8D3AE;
+}
+.bg_edit_dark
+{
+    border: 1px solid #FFFFFF;
+    background-repeat: no-repeat;
+    font-family: "Comic Sans MS";
+    font-size: small;
+    font-weight: bold;
+    text-align: center;
+    background-color: #663300;
+    color: #FFFFFF;
+    width: 60px;
+    height: 24px;
+}
+.bg_header_sel
+{
+    color: #FFFFFF;
+    background-repeat: repeat-x;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: #FFFF00;
+    text-align: center;
+    background-color: #433018;
+    font-weight: bold;
+    cursor: hand;
+}

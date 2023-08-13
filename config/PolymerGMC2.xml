@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<config name="GMC2" description="Учет расхода полимера ГМЦ-2" author="clamdv">
+  <maintable>
+    <row header="true">
+      <cell>
+        <value>Полимер</value>
+        <type>text</type>
+      </cell>
+      <cell>
+        <value>План</value>
+        <type>text</type>
+      </cell>
+      <cell>
+        <value>Приход</value>
+        <type>text</type>
+      </cell>
+      <cell>
+        <value>Остаток</value>
+        <type>text</type>
+      </cell>
+      <cell>
+        <value>Наличие</value>
+        <type>text</type>
+      </cell>
+    </row>
+    <row>
+      <cell>
+        <value>49100</value>
+        <type>text</type>
+      </cell>
+      <cell>
+        <value>23923</value>
+        <type>value</type>
+        <int>8</int>
+      </cell>
+      <cell>
+        <value>24020</value>
+        <type>value</type>
+        <int>8</int>
+      </cell>
+      <cell>
+        <value>24327</value>
+        <type>value</type>
+        <int>8</int>
+      </cell>
+      <cell>
+        <value>24333</value>
+        <type>value</type>
+        <int>8</int>
+      </cell>
+    </row>
+    <row>
+      <cell>
+        <value>12244</value>
+        <type>text</type>
+      </cell>
+      <cell>
+        <value>23958</value>
+        <type>value</type>
+        <int>8</int>
+      </cell>
+      <cell>
+        <value>24070</value>
+        <type>value</type>
+        <int>8</int>
+      </cell>
+      <cell>
+        <value>24328</value>
+        <type>value</type>
+        <int>8</int>
+      </cell>
+      <cell>
+        <value>24334</value>
+        <type>value</type>
+        <int>8</int>
+      </cell>
+    </row>
+    <row>
+      <cell>
+        <value>4094D</value>
+        <type>text</type>
+      </cell>
+      <cell>
+        <value>20327</value>
+        <type>value</type>
+        <int>8</int>
+      </cell>
+      <cell>
+        <value>23429</value>
+        <type>value</type>
+        <int>8</int>
+      </cell>
+      <cell>
+        <value>39481</value>
+        <type>value</type>
+        <int>8</int>
+      </cell>
+      <cell>
+        <value>39482</value>
+        <type>value</type>
+        <int>8</int>
+      </cell>
+    </row>   
+    <row>
+      <cell>
+        <value>Итого</value>
+        <type>text</type>
+      </cell>
+      <cell>
+        <value>24325</value>
+        <type>value</type>
+        <int>8</int>
+      </cell>
+      <cell>
+        <value>24326</value>
+        <type>value</type>
+        <int>8</int>
+      </cell>
+      <cell>
+        <value>24329</value>
+        <type>value</type>
+        <int>8</int>
+      </cell>
+      <cell>
+        <value>24335</value>
+        <type>value</type>
+        <int>8</int>
+      </cell>
+    </row>
+  </maintable>
+  <inputplane caption="Ввод плана">
+    <row>
+      <label>Полимер 49100</label>
+      <value>23923</value>
+      <min>0</min>
+      <max>500</max>
+      <int>8</int>
+    </row>
+    <row>
+      <label>Полимер 12244</label>
+      <value>23958</value>
+      <min>0</min>
+      <max>500</max>
+      <int>8</int>
+    </row>
+    <row>
+      <label>Полимер 4094D</label>
+      <value>20327</value>
+      <min>0</min>
+      <max>500</max>
+      <int>8</int>
+      <calcid>1165</calcid>
+      <calcname>Учет полимера ГМЦ-2 (1)</calcname>
+    </row>
+  </inputplane>
+  
+  <inputinner caption="Ввод прихода">
+    <row>
+      <label>Полимер 49100</label>
+      <value>24016</value>
+      <min>0</min>
+      <max>500</max>
+      <int>8</int>
+      <tagsum>24020</tagsum>
+    </row>
+    <row>
+      <label>Полимер 12244</label>
+      <value>24019</value>
+      <min>0</min>
+      <max>500</max>
+      <int>8</int>
+      <tagsum>24070</tagsum>
+    </row>
+    <row>
+      <label>Полимер 4094D</label>
+      <value>39483</value>
+      <min>0</min>
+      <max>500</max>
+      <int>8</int>
+      <tagsum>23429</tagsum>
+      <calcid>1165</calcid>
+      <calcname>Учет полимера ГМЦ-2 (1)</calcname>
+    </row>
+  </inputinner>
+
+  <inputtechno caption="Ввод в наличие">
+    <row>
+      <label>Полимер 49100</label>
+      <value>24333</value>
+      <min>0</min>
+      <max>500</max>
+      <int>8</int>
+    </row>
+    <row>
+      <label>Полимер 12244</label>
+      <value>24334</value>
+      <min>0</min>
+      <max>500</max>
+      <int>8</int>
+    </row>
+    <row>
+      <label>Полимер 4094D</label>
+      <value>39482</value>
+      <min>0</min>
+      <max>500</max>
+      <int>8</int>
+      <calcid>1166</calcid>
+      <calcname>Учет полимера ГМЦ-2 (2)</calcname>
+    </row>
+  </inputtechno>
+
+  <outputparam>
+    <cell>
+      <label>49100 план</label>
+      <value>23923</value>
+      <int>8</int>
+    </cell>
+    <cell>
+      <label>49100 приход</label>
+      <value>24016</value>
+      <int>8</int>
+    </cell>
+    <cell>
+      <label>49100 технология</label>
+      <value>24333</value>
+      <int>8</int>
+    </cell>
+    <cell>
+      <label>12244 план</label>
+      <value>23958</value>
+      <int>8</int>
+    </cell>
+    <cell>
+      <label>12244 приход</label>
+      <value>24019</value>
+      <int>8</int>
+    </cell>
+    <cell>
+      <label>12244 технология</label>
+      <value>24334</value>
+      <int>8</int>
+    </cell>
+    <cell>
+      <label>4094D план</label>
+      <value>20327</value>
+      <int>8</int>
+    </cell>
+    <cell>
+      <label>4094D приход</label>
+      <value>23429</value>
+      <int>8</int>
+    </cell>
+    <cell>
+      <label>4094D технология</label>
+      <value>39482</value>
+      <int>8</int>
+    </cell>
+  </outputparam>
+</config>

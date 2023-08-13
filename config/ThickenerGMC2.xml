@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<config name="GMC2" description="Ввод времени фильтрации слива сгустителей ГМЦ-2" author="clamdv">
+  <maintable>
+    <cell>
+      <label>Сгуститель 1</label>
+      <value>24584</value>
+      <int>9</int>
+    </cell>
+    <cell>
+      <label>Сгуститель 2</label>
+      <value>24585</value>
+      <int>9</int>
+    </cell>
+    <cell>
+      <label>Сгуститель 3</label>
+      <value>24586</value>
+      <int>9</int>
+    </cell>
+    <cell>
+      <label>Сгуститель 4</label>
+      <value>24587</value>
+      <int>9</int>
+    </cell>
+    <cell>
+      <label>Сгуститель 5</label>
+      <value>24588</value>
+      <int>9</int>
+    </cell>
+    <cell>
+      <label>Сгуститель 1/1</label>
+      <value>24589</value>
+      <int>9</int>
+    </cell>
+    <cell>
+      <label>Сгуститель 2/1</label>
+      <value>24590</value>
+      <int>9</int>
+    </cell>
+    <cell>
+      <label>Сгуститель 3/1</label>
+      <value>24591</value>
+      <int>9</int>
+    </cell>
+    <cell>
+      <label>Сгуститель 1/2</label>
+      <value>24592</value>
+      <int>9</int>
+    </cell>
+    <cell>
+      <label>Сгуститель 1/3</label>
+      <value>24593</value>
+      <int>9</int>
+    </cell>
+    <cell>
+      <label>Сгуститель 2/3</label>
+      <value>24594</value>
+      <int>9</int>
+    </cell>
+    <cell>
+      <label>Сгуститель 2/2</label>
+      <value>24015</value>
+      <int>9</int>
+    </cell>
+  </maintable>  
+  
+  <inputinner caption="Сгустителя d40м" captionex="Сгустителя d20м">
+    <row>
+      <label>Сгуститель 1</label>
+      <value>24584</value>
+      <int>9</int>
+      <min>0</min>
+      <max>20</max>
+    </row>
+    <row>
+      <label>Сгуститель 2</label>
+      <value>24585</value>
+      <int>9</int>
+      <min>0</min>
+      <max>20</max>
+    </row>
+    <row>
+      <label>Сгуститель 3</label>
+      <value>24586</value>
+      <int>9</int>
+      <min>0</min>
+      <max>20</max>
+    </row>
+    <row>
+      <label>Сгуститель 4</label>
+      <value>24587</value>
+      <int>9</int>
+      <min>0</min>
+      <max>20</max>
+    </row>
+    <row>
+      <label>Сгуститель 5</label>
+      <value>24588</value>
+      <int>9</int>
+      <min>0</min>
+      <max>20</max>
+    </row>
+    <row>
+      <label>Сгуститель 1/1</label>
+      <value>24589</value>
+      <int>9</int>
+      <min>0</min>
+      <max>20</max>
+    </row>
+    <row>
+      <label>Сгуститель 2/1</label>
+      <value>24590</value>
+      <int>9</int>
+      <min>0</min>
+      <max>20</max>
+    </row>
+    <row>
+      <label>Сгуститель 3/1</label>
+      <value>24591</value>
+      <int>9</int>
+      <min>0</min>
+      <max>20</max>
+    </row>
+    <row>
+      <label>Сгуститель 1/2</label>
+      <value>24592</value>
+      <int>9</int>
+      <min>0</min>
+      <max>20</max>
+    </row>
+    <row>
+      <label>Сгуститель 1/3</label>
+      <value>24593</value>
+      <int>9</int>
+      <min>0</min>
+      <max>20</max>
+    </row>
+    <row>
+      <label>Сгуститель 2/3</label>
+      <value>24594</value>
+      <int>9</int>
+      <min>0</min>
+      <max>20</max>
+    </row>
+    <row>
+      <label>Сгуститель 2/2</label>
+      <value>24015</value>
+      <int>9</int>
+      <min>0</min>
+      <max>20</max>
+    </row>
+  </inputinner>
+</config>

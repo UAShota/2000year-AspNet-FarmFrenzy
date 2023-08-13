@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns2="urn:First" xmlns:ns1="urn:uUIData" name="Isuiservice" targetNamespace="http://tempuri.org/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xs:schema xmlns="urn:uUIData" targetNamespace="urn:uUIData">
+      <xs:complexType name="TUserInfo">
+        <xs:sequence>
+          <xs:element name="Id" type="xs:int" />
+          <xs:element name="Login" type="xs:string" />
+          <xs:element name="Fio" type="xs:string" />
+          <xs:element name="FioB" type="ns2:TArrayOfByte" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TServiceInfo">
+        <xs:sequence>
+          <xs:element name="Id" type="xs:int" />
+          <xs:element name="IdModule" type="xs:int" />
+          <xs:element name="Name" type="xs:string" />
+          <xs:element name="Param1" type="xs:string" />
+          <xs:element name="Param2" type="xs:string" />
+          <xs:element name="Res" type="xs:string" />
+          <xs:element name="NameB" type="ns2:TArrayOfByte" />
+          <xs:element name="Param1B" type="ns2:TArrayOfByte" />
+          <xs:element name="Param2B" type="ns2:TArrayOfByte" />
+          <xs:element name="ResB" type="ns2:TArrayOfByte" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TArrayOfUserInfo">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TUserInfo[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TArrayOfUserModuleRight">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TUserModuleRight[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TUserModuleRight">
+        <xs:sequence>
+          <xs:element name="IdService" type="xs:int" />
+          <xs:element name="IdRight" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema xmlns="urn:First" targetNamespace="urn:First">
+      <xs:complexType name="TArrayOfByte">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="xs:unsignedByte[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TArrayOfInt">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="xs:int[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+    </xs:schema>
+  </types>
+  <message name="login0Request">
+    <part name="uName" type="xs:string" />
+    <part name="passwd" type="xs:string" />
+  </message>
+  <message name="login0Response">
+    <part name="return" type="xs:boolean" />
+  </message>
+  <message name="getUserInfoByID1Request">
+    <part name="id" type="xs:int" />
+  </message>
+  <message name="getUserInfoByID1Response">
+    <part name="return" type="ns1:TUserInfo" />
+  </message>
+  <message name="getServiceInfoByID2Request">
+    <part name="id" type="xs:int" />
+  </message>
+  <message name="getServiceInfoByID2Response">
+    <part name="return" type="ns1:TServiceInfo" />
+  </message>
+  <message name="getUserInfoByLogin3Request">
+    <part name="login" type="xs:string" />
+  </message>
+  <message name="getUserInfoByLogin3Response">
+    <part name="return" type="ns1:TUserInfo" />
+  </message>
+  <message name="getIDServicesByModuleName4Request">
+    <part name="module" type="xs:string" />
+  </message>
+  <message name="getIDServicesByModuleName4Response">
+    <part name="return" type="ns2:TArrayOfInt" />
+  </message>
+  <message name="getIDServicesByModuleID5Request">
+    <part name="moduleID" type="xs:int" />
+  </message>
+  <message name="getIDServicesByModuleID5Response">
+    <part name="return" type="ns2:TArrayOfInt" />
+  </message>
+  <message name="getIDUsersByIDService6Request">
+    <part name="idRes" type="xs:int" />
+    <part name="idRight" type="xs:int" />
+  </message>
+  <message name="getIDUsersByIDService6Response">
+    <part name="return" type="ns2:TArrayOfInt" />
+  </message>
+  <message name="getUsersInfoByModuleName7Request">
+    <part name="module" type="xs:string" />
+    <part name="idRight" type="xs:int" />
+  </message>
+  <message name="getUsersInfoByModuleName7Response">
+    <part name="return" type="ns1:TArrayOfUserInfo" />
+  </message>
+  <message name="getRight8Request">
+    <part name="userID" type="xs:int" />
+    <part name="resID" type="xs:int" />
+  </message>
+  <message name="getRight8Response">
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="GetUserModuleRight9Request">
+    <part name="login" type="xs:string" />
+    <part name="moduleName" type="xs:string" />
+  </message>
+  <message name="GetUserModuleRight9Response">
+    <part name="return" type="ns1:TArrayOfUserModuleRight" />
+  </message>
+  <message name="GetMaxIDRightByRes10Request">
+    <part name="moduleID" type="xs:int" />
+    <part name="login" type="xs:string" />
+    <part name="param1" type="xs:string" />
+    <part name="param2" type="xs:string" />
+    <part name="res" type="xs:string" />
+  </message>
+  <message name="GetMaxIDRightByRes10Response">
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="getIPByName11Request">
+    <part name="hostName" type="xs:string" />
+  </message>
+  <message name="getIPByName11Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="getNameByIP12Request">
+    <part name="IPaddr" type="xs:string" />
+  </message>
+  <message name="getNameByIP12Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <portType name="Isui">
+    <operation name="login">
+      <input message="tns:login0Request" />
+      <output message="tns:login0Response" />
+    </operation>
+    <operation name="getUserInfoByID">
+      <input message="tns:getUserInfoByID1Request" />
+      <output message="tns:getUserInfoByID1Response" />
+    </operation>
+    <operation name="getServiceInfoByID">
+      <input message="tns:getServiceInfoByID2Request" />
+      <output message="tns:getServiceInfoByID2Response" />
+    </operation>
+    <operation name="getUserInfoByLogin">
+      <input message="tns:getUserInfoByLogin3Request" />
+      <output message="tns:getUserInfoByLogin3Response" />
+    </operation>
+    <operation name="getIDServicesByModuleName">
+      <input message="tns:getIDServicesByModuleName4Request" />
+      <output message="tns:getIDServicesByModuleName4Response" />
+    </operation>
+    <operation name="getIDServicesByModuleID">
+      <input message="tns:getIDServicesByModuleID5Request" />
+      <output message="tns:getIDServicesByModuleID5Response" />
+    </operation>
+    <operation name="getIDUsersByIDService">
+      <input message="tns:getIDUsersByIDService6Request" />
+      <output message="tns:getIDUsersByIDService6Response" />
+    </operation>
+    <operation name="getUsersInfoByModuleName">
+      <input message="tns:getUsersInfoByModuleName7Request" />
+      <output message="tns:getUsersInfoByModuleName7Response" />
+    </operation>
+    <operation name="getRight">
+      <input message="tns:getRight8Request" />
+      <output message="tns:getRight8Response" />
+    </operation>
+    <operation name="GetUserModuleRight">
+      <input message="tns:GetUserModuleRight9Request" />
+      <output message="tns:GetUserModuleRight9Response" />
+    </operation>
+    <operation name="GetMaxIDRightByRes">
+      <input message="tns:GetMaxIDRightByRes10Request" />
+      <output message="tns:GetMaxIDRightByRes10Response" />
+    </operation>
+    <operation name="getIPByName">
+      <input message="tns:getIPByName11Request" />
+      <output message="tns:getIPByName11Response" />
+    </operation>
+    <operation name="getNameByIP">
+      <input message="tns:getNameByIP12Request" />
+      <output message="tns:getNameByIP12Response" />
+    </operation>
+  </portType>
+  <binding name="Isuibinding" type="tns:Isui">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <operation name="login">
+      <soap:operation soapAction="urn:suiIntf-Isui#login" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:suiIntf-Isui" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:suiIntf-Isui" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="getUserInfoByID">
+      <soap:operation soapAction="urn:suiIntf-Isui#getUserInfoByID" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:suiIntf-Isui" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:suiIntf-Isui" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="getServiceInfoByID">
+      <soap:operation soapAction="urn:suiIntf-Isui#getServiceInfoByID" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:suiIntf-Isui" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:suiIntf-Isui" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="getUserInfoByLogin">
+      <soap:operation soapAction="urn:suiIntf-Isui#getUserInfoByLogin" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:suiIntf-Isui" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:suiIntf-Isui" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="getIDServicesByModuleName">
+      <soap:operation soapAction="urn:suiIntf-Isui#getIDServicesByModuleName" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:suiIntf-Isui" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:suiIntf-Isui" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="getIDServicesByModuleID">
+      <soap:operation soapAction="urn:suiIntf-Isui#getIDServicesByModuleID" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:suiIntf-Isui" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:suiIntf-Isui" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="getIDUsersByIDService">
+      <soap:operation soapAction="urn:suiIntf-Isui#getIDUsersByIDService" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:suiIntf-Isui" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:suiIntf-Isui" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="getUsersInfoByModuleName">
+      <soap:operation soapAction="urn:suiIntf-Isui#getUsersInfoByModuleName" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:suiIntf-Isui" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:suiIntf-Isui" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="getRight">
+      <soap:operation soapAction="urn:suiIntf-Isui#getRight" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:suiIntf-Isui" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:suiIntf-Isui" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetUserModuleRight">
+      <soap:operation soapAction="urn:suiIntf-Isui#GetUserModuleRight" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:suiIntf-Isui" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:suiIntf-Isui" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetMaxIDRightByRes">
+      <soap:operation soapAction="urn:suiIntf-Isui#GetMaxIDRightByRes" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:suiIntf-Isui" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:suiIntf-Isui" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="getIPByName">
+      <soap:operation soapAction="urn:suiIntf-Isui#getIPByName" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:suiIntf-Isui" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:suiIntf-Isui" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="getNameByIP">
+      <soap:operation soapAction="urn:suiIntf-Isui#getNameByIP" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:suiIntf-Isui" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:suiIntf-Isui" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="Isuiservice">
+    <port name="IsuiPort" binding="tns:Isuibinding">
+      <soap:address location="http://isauth/UIWS/srvui.exe/soap/Isui" />
+    </port>
+  </service>
+</definitions>
